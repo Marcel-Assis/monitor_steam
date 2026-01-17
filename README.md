@@ -20,15 +20,15 @@ Este projeto automatiza a busca por jogos que estão com **100% de desconto** na
 
 **🤖 Configurando o seu Bot no Telegram**
 
-Para receber as notificações, você precisará criar o seu próprio bot:
+- Para receber as notificações, você precisará criar o seu próprio bot:
 
-    Crie o Bot: Procure o @BotFather no Telegram e use o comando /newbot. Siga as instruções para receber o seu API Token.
+- Crie o Bot: Procure o @BotFather no Telegram e use o comando /newbot. Siga as instruções para receber o seu API Token.
 
-    Inicie o Bot: Procure pelo bot que você acabou de criar e clique em "Começar" ou "Start".
+- Inicie o Bot: Procure pelo bot que você acabou de criar e clique em "Começar" ou "Start".
 
-    Obtenha seu ID: Procure o bot @userinfobot e envie uma mensagem para descobrir o seu ID numérico.
+- Obtenha seu ID: Procure o bot @userinfobot e envie uma mensagem para descobrir o seu ID numérico.
 
-    Configure no Código: Insira o Token e o seu ID nas variáveis correspondentes dentro do arquivo main.py.
+- Configure no Código: Insira o Token e o seu ID nas variáveis correspondentes dentro do arquivo main.py.
 
 1. **Ative o ambiente virtual:**
 
