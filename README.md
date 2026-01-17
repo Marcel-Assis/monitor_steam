@@ -1,37 +1,41 @@
-🎮 Monitor de Jogos Gratuitos (Steam)
+# 🎮 Monitor de Jogos Gratuitos (Steam)
 
-Este projeto automatiza a busca por jogos que estão com 100% de desconto na Steam. Ele verifica as promoções atuais e me envia uma notificação direta no Telegram sempre que encontra um jogo novo que ficou gratuito (R$ 0,00).
-🚀 O que o projeto faz
+Este projeto automatiza a busca por jogos que estão com **100% de desconto** na Steam. Ele verifica as promoções atuais e envia uma notificação direta no Telegram sempre que encontra um jogo novo que ficou gratuito (R$ 0,00).
 
-    Busca Inteligente: Consulta a API do CheapShark para encontrar jogos gratuitos na Steam.
+## 🚀 O que o projeto faz
 
-    Filtro Anti-Erro: Verifica se o preço é realmente zero para evitar falsas promoções.
+- **Busca Inteligente:** Consulta a API do CheapShark para encontrar jogos gratuitos na Steam.
+- **Filtro Anti-Erro:** Verifica se o preço é realmente zero para evitar falsas promoções.
+- **Memória (SQLite):** Utiliza um banco de dados local para salvar os jogos já encontrados. Assim, ele só me avisa sobre as novidades, evitando notificações repetidas.
+- **Notificação no Celular:** Integrado com um Bot do Telegram que envia o nome do jogo e o link direto para resgate.
 
-    Memória (SQLite): Utiliza um banco de dados local para salvar os jogos já encontrados. Assim, ele só me avisa sobre as novidades, evitando notificações repetidas.
+## 🛠️ Tecnologias Utilizadas
 
-    Notificação no Celular: Integrado com um Bot do Telegram que me envia o nome do jogo e o link direto para resgate.
+- **Python:** Linguagem principal do projeto.
+- **SQLite:** Para persistência de dados e histórico de promoções.
+- **Telegram Bot API:** Para o sistema de notificações em tempo real.
+- **Requests:** Para comunicação com APIs externas.
 
-🛠️ Tecnologias Utilizadas
+## 📋 Como utilizar
 
-    Python: Linguagem principal do projeto.
+1. **Ative o ambiente virtual:**
 
-    SQLite: Para persistência de dados e histórico.
+   ```bash
+   venv\Scripts\activate
 
-    Telegram Bot API: Para o sistema de notificações em tempo real.
+   ```
 
-    Requests: Para comunicação com APIs externas.
+2. **Instale as dependências::**
 
-📋 Como utilizar
+   ```bash
+   pip install requests python-dotenv
 
-    Ative o ambiente virtual: venv\Scripts\activate
+   ```
 
-    Instale as dependências: pip install requests python-dotenv
+3. **Configuração: Edite o arquivo main.py com o seu TOKEN e CHAT_ID do Telegram.**
+4. **Execução**
+   ```bash
+   python main.py
+   ```
 
-    Configure o seu TOKEN e CHAT_ID do Telegram no script.
-
-    Execute a aplicação:
-    Bash
-
-    python main.py
-
-    O script verificará as promoções e enviará uma mensagem no seu Telegram confirmando o status da busca.
+O script verificará as promoções e enviará uma mensagem no Telegram confirmando se novos jogos foram encontrados ou se o sistema está atualizado.
