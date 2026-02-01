@@ -6,6 +6,7 @@ from auth import TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
 TOKEN_TELEGRAM = TELEGRAM_BOT_TOKEN
 CHAT_ID = TELEGRAM_CHAT_ID
 
+# Função para enviar mensagens via Telegram
 def enviar_telegram(mensagem):
     url = f"https://api.telegram.org/bot{TOKEN_TELEGRAM}/sendMessage"
     payload = {"chat_id": CHAT_ID, "text": mensagem, "parse_mode": "HTML"}
@@ -14,6 +15,7 @@ def enviar_telegram(mensagem):
     except Exception as e:
         print(f"Erro ao enviar para o Telegram: {e}")
 
+# Função para iniciar o banco de dados
 def iniciar_db():
     conn = sqlite3.connect('promocoes.db')
     cursor = conn.cursor()
@@ -27,6 +29,7 @@ def iniciar_db():
     conn.commit()
     return conn
 
+# Função principal para buscar jogos grátis
 def buscar_jogos_gratis():
     conn = iniciar_db()
     cursor = conn.cursor()
@@ -57,13 +60,13 @@ def buscar_jogos_gratis():
         
         conn.commit()
 
-        # --- NOVA LÓGICA DE AVISO ---
+        # Relatório final
         if novos_encontrados == 0:
             print("Nenhuma novidade.")
             enviar_telegram("🔎 <b>Status do Monitor:</b> Busca concluída. Nenhuma nova promoção de R$ 0,00 encontrada no momento.")
         else:
             print(f"Sucesso! {novos_encontrados} novos jogos enviados.")
-            
+    # Tratamento de erros        
     except Exception as e:
         erro_msg = f"⚠️ <b>Erro no Monitor:</b> {e}"
         enviar_telegram(erro_msg)
