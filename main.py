@@ -71,7 +71,5 @@ def buscar_jogos_gratis():
     finally:
         conn.close()
 
-import time
-
 if __name__ == "__main__":
     buscar_jogos_gratis()
